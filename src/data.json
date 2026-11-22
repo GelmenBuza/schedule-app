@@ -1,0 +1,250 @@
+[
+  {
+    "date": "2026-11-16",
+    "weekday": 1,
+    "weekdayName": "Понедельник",
+    "lessons": [
+      {
+        "id": 8050,
+        "weekday": 1,
+        "lessonNumber": 1,
+        "startTime": "09:00",
+        "endTime": "10:30",
+        "subject": "МДК.01.04 Системное программирование",
+        "typeLesson": null,
+        "cabinet": "513",
+        "teachers": [
+          "Екимов И."
+        ]
+      },
+      {
+        "id": 7905,
+        "weekday": 1,
+        "lessonNumber": 2,
+        "startTime": "10:40",
+        "endTime": "12:10",
+        "subject": "МДК.01.04 Системное программирование",
+        "typeLesson": null,
+        "cabinet": "513",
+        "teachers": [
+          "Екимов И."
+        ]
+      },
+      {
+        "id": 7995,
+        "weekday": 1,
+        "lessonNumber": 3,
+        "startTime": "12:40",
+        "endTime": "14:10",
+        "subject": "Кураторский час",
+        "typeLesson": null,
+        "cabinet": "513",
+        "teachers": [
+          "Шатохина Е."
+        ]
+      },
+      {
+        "id": 8095,
+        "weekday": 1,
+        "lessonNumber": 4,
+        "startTime": "14:20",
+        "endTime": "15:50",
+        "subject": "МДК.01.01 Разработка программных модулей",
+        "typeLesson": null,
+        "cabinet": "509",
+        "teachers": [
+          "Анисимов И. К."
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-11-17",
+    "weekday": 2,
+    "weekdayName": "Вторник",
+    "lessons": [
+      {
+        "id": 8317,
+        "weekday": 2,
+        "lessonNumber": 1,
+        "startTime": "09:00",
+        "endTime": "10:30",
+        "subject": "Иностранный язык в профессиональной деятельности",
+        "typeLesson": null,
+        "cabinet": "409",
+        "teachers": [
+          "Некрасов М.В."
+        ]
+      },
+      {
+        "id": 8128,
+        "weekday": 2,
+        "lessonNumber": 2,
+        "startTime": "10:40",
+        "endTime": "12:10",
+        "subject": "МДК.01.04 Системное программирование",
+        "typeLesson": null,
+        "cabinet": "513",
+        "teachers": [
+          "Екимов И."
+        ]
+      },
+      {
+        "id": 8289,
+        "weekday": 2,
+        "lessonNumber": 5,
+        "startTime": "16:00",
+        "endTime": "17:30",
+        "subject": "МДК.01.03 Разработка мобильных приложений",
+        "typeLesson": "асинхрон",
+        "cabinet": null,
+        "teachers": []
+      },
+      {
+        "id": 8222,
+        "weekday": 2,
+        "lessonNumber": 6,
+        "startTime": "17:35",
+        "endTime": "19:05",
+        "subject": "Физическая культура",
+        "typeLesson": "асинхрон",
+        "cabinet": null,
+        "teachers": []
+      }
+    ]
+  },
+  {
+    "date": "2026-11-18",
+    "weekday": 3,
+    "weekdayName": "Среда",
+    "lessons": [
+      {
+        "id": 8508,
+        "weekday": 3,
+        "lessonNumber": 2,
+        "startTime": "10:40",
+        "endTime": "12:10",
+        "subject": "Карьерное ориентирование",
+        "typeLesson": null,
+        "cabinet": "301",
+        "teachers": [
+          "Центр карьеры"
+        ]
+      },
+      {
+        "id": 8534,
+        "weekday": 3,
+        "lessonNumber": 3,
+        "startTime": "12:40",
+        "endTime": "14:10",
+        "subject": "МДК.01.01 Разработка программных модулей",
+        "typeLesson": null,
+        "cabinet": "407",
+        "teachers": [
+          "Анисимов И. К."
+        ]
+      },
+      {
+        "id": 8535,
+        "weekday": 3,
+        "lessonNumber": 4,
+        "startTime": "14:20",
+        "endTime": "15:50",
+        "subject": "МДК.01.01 Разработка программных модулей",
+        "typeLesson": null,
+        "cabinet": "407",
+        "teachers": [
+          "Анисимов И. К."
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-11-19",
+    "weekday": 4,
+    "weekdayName": "Четверг",
+    "lessons": [
+      {
+        "id": 8566,
+        "weekday": 4,
+        "lessonNumber": 2,
+        "startTime": "10:40",
+        "endTime": "12:10",
+        "subject": "МДК.01.04 Системное программирование",
+        "typeLesson": null,
+        "cabinet": "513",
+        "teachers": [
+          "Екимов И."
+        ]
+      },
+      {
+        "id": 8755,
+        "weekday": 4,
+        "lessonNumber": 3,
+        "startTime": "12:40",
+        "endTime": "14:10",
+        "subject": "МДК.01.01 Разработка программных модулей",
+        "typeLesson": null,
+        "cabinet": "507",
+        "teachers": [
+          "Анисимов И. К."
+        ]
+      },
+      {
+        "id": 8734,
+        "weekday": 4,
+        "lessonNumber": 5,
+        "startTime": "16:00",
+        "endTime": "17:30",
+        "subject": "Правовое обеспечение профессиональной деятельности",
+        "typeLesson": "асинхрон",
+        "cabinet": null,
+        "teachers": []
+      },
+      {
+        "id": 8693,
+        "weekday": 4,
+        "lessonNumber": 6,
+        "startTime": "17:35",
+        "endTime": "19:05",
+        "subject": "МДК.04.03 Основы продакт-менеджмента",
+        "typeLesson": "асинхрон",
+        "cabinet": null,
+        "teachers": []
+      }
+    ]
+  },
+  {
+    "date": "2026-11-20",
+    "weekday": 5,
+    "weekdayName": "Пятница",
+    "lessons": [
+      {
+        "id": 8843,
+        "weekday": 5,
+        "lessonNumber": 3,
+        "startTime": "12:40",
+        "endTime": "14:10",
+        "subject": "МДК.04.01 Внедрение и поддержка компьютерных систем",
+        "typeLesson": null,
+        "cabinet": "404",
+        "teachers": [
+          "Палладий Н."
+        ]
+      },
+      {
+        "id": 8844,
+        "weekday": 5,
+        "lessonNumber": 4,
+        "startTime": "14:20",
+        "endTime": "15:50",
+        "subject": "МДК.04.02 Обеспечение качества функционирования компьютерных систем",
+        "typeLesson": null,
+        "cabinet": "404",
+        "teachers": [
+          "Палладий Н."
+        ]
+      }
+    ]
+  }
+]

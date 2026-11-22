@@ -1,16 +1,16 @@
 import {useLocalSearchParams} from "expo-router";
 import {useEffect, useState} from "react";
 import {getRawScheduleData} from "@/services/scheduleService";
-import {parseGroups} from "@/utils/parseGroups";
-import {ActivityIndicator, StyleSheet, Text, View} from "react-native";
-import {parseLessons} from "@/utils/parseLessons";
+import {ActivityIndicator, ScrollView, StyleSheet, Text, View} from "react-native";
+import {DaySchedule, parseLessons} from "@/utils/parseLessons";
+import LessonCard from "@/components/LesionCard/LessonCard";
 
 
 export default function scheduleScreen() {
     const {groupId} = useLocalSearchParams<{ groupId: string }>();
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
-    const [lessons, setLessons] = useState([]);
+    const [lessons, setLessons] = useState<DaySchedule[]>([]);
 
     useEffect(() => {
         getRawScheduleData(`/groups/${groupId}`)
@@ -36,19 +36,73 @@ export default function scheduleScreen() {
             </View>
         );
     }
-
+    console.log(JSON.stringify(lessons, null, 2));
     return (
-        <View >
-
-        </View>
+        <ScrollView style={styles.container} contentContainerStyle={styles.content}>
+            {lessons.map((day) => (
+                <View key={day.date} style={styles.dayContainer}>
+                    <View style={styles.dayHeader}>
+                        <Text style={styles.weekdayText}>{day.weekdayName}</Text>
+                        <Text style={styles.dateText}>{day.date}</Text>
+                    </View>
+                    {day.lessons.map((lesson) => (
+                        <LessonCard lesson={lesson} key={lesson.id}/>
+                    ))}
+                </View>
+            ))}
+        </ScrollView>
     )
 }
 
 const styles = StyleSheet.create({
-    container: {flex: 1, backgroundColor: '#fff'},
-    content: {padding: 16},
-    center: {flex: 1, justifyContent: 'center', alignItems: 'center', padding: 16},
-    statusText: {marginTop: 12, fontSize: 16},
-    errorText: {color: '#d32f2f', fontSize: 16, textAlign: 'center'},
-    code: {fontFamily: 'monospace', fontSize: 12},
+    center: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 16
+    },
+    statusText: {
+        marginTop: 12,
+        fontSize: 16
+    },
+    errorText: {
+        color: '#d32f2f',
+        fontSize: 16,
+        textAlign: 'center'
+    },
+    code: {
+        fontFamily: 'monospace',
+        fontSize: 12
+    },
+    container: {
+        flex: 1,
+        backgroundColor: '#F3F4F6',
+    },
+    content: {
+        padding: 16,
+        paddingBottom: 32,
+        gap: 24,
+    },
+    dayContainer: {
+        gap: 10,
+    },
+    dayHeader: {
+        flexDirection: 'row',
+        alignItems: 'baseline',
+        justifyContent: 'space-between',
+        paddingHorizontal: 4,
+        marginBottom: 2,
+    },
+    weekdayText: {
+        fontSize: 20,
+        fontWeight: '700',
+        color: '#111827',
+    },
+    dateText: {
+        fontSize: 14,
+        fontWeight: '500',
+        color: '#6B7280',
+    },
+
+
 });
