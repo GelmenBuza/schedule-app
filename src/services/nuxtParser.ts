@@ -1,4 +1,4 @@
-import { parse } from 'devalue';
+import {parse} from 'devalue';
 
 const NUXT_DATA_REGEX = /<script[^>]*id="__NUXT_DATA__"[^>]*>([\s\S]*?)<\/script>/;
 

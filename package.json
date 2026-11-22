@@ -4,6 +4,7 @@
   "main": "expo-router/entry",
   "dependencies": {
     "@expo/ui": "~58.0.29",
+    "@react-native-picker/picker": "2.11.4",
     "devalue": "^6.0.3",
     "expo": "~58.0.26",
     "expo-constants": "~58.0.16",

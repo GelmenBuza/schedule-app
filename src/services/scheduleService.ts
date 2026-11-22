@@ -1,4 +1,4 @@
-import { fetchNuxtData } from './nuxtParser';
+import {fetchNuxtData} from './nuxtParser';
 
 const BASE_URL = 'https://site.mstimetables.ru/01a00f53d32773b5b396bf3eb6f57ce2';
 
