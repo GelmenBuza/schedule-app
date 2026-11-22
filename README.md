@@ -1,56 +1,93 @@
-# Welcome to your Expo app 👋
+# Расписание занятий
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Мобильное приложение для просмотра расписания занятий студентов. Приложение позволяет пользователям выбирать свою учебную группу и просматривать расписание на неделю с информацией о предметах, преподавателях, аудиториях и времени занятий.
 
-## Get started
+## Особенности
 
-1. Install dependencies
+- Выбор учебной группы из списка доступных
+- Просмотр расписания на неделю с группировкой по дням
+- Отображение детальной информации о каждом занятии:
+  - Название предмета
+  - Время начала и окончания
+  - Преподаватель(и)
+  - Аудитория
+  - Тип занятия (асинхронное/синхронное)
 
-   ```bash
-   npm install
-   ```
+## Стек технологий
 
-2. Start the app
+- **Фреймворк**: React Native с Expo
+- **Язык программирования**: TypeScript
+- **Архитектура**: Модульная структура приложения
+- **Получение данных**: Nuxt.js data parsing (через специализированный парсер)
+- **UI компоненты**: React Native components с использованием StyleSheet
 
-   ```bash
-   npx expo start
-   ```
+## Структура проекта
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **src/app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+src/
+├── app/                    # Основные экраны приложения
+│   ├── index.tsx          # Главный экран выбора группы
+│   └── schedule.tsx       # Экран отображения расписания
+├── components/            # Пользовательские компоненты
+│   └── LesionCard/        # Компонент отображения одного занятия
+├── services/              # Сервисы для работы с данными
+│   ├── nuxtParser.ts      # Парсер данных Nuxt.js
+│   └── scheduleService.ts # Сервис получения расписания
+├── utils/                 # Вспомогательные функции
+│   ├── parseGroups.ts     # Парсинг списка групп
+│   └── parseLessons.ts    # Парсинг информации о занятиях
+└── constants/             # Константы и темы приложения
 ```
 
-This command will move the starter code to the **example** directory and create a blank **src/app** directory where you can start developing.
+## Зависимости
 
-### Other setup steps
+Основные зависимости проекта:
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+- `expo` - платформа для кроссплатформенной разработки
+- `react-native-picker/picker` - компонент выбора значений из списка
+- `devalue` - библиотека для десериализации данных Nuxt.js
+- `@react-navigation/native` - навигация между экранами
 
-## Learn more
+## Запуск проекта
 
-To learn more about developing your project with Expo, look at the following resources:
+1. Установите зависимости:
+```bash
+npm install
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+2. Запустите приложение:
+```bash
+# Для Android
+npm run android
 
-## Join the community
+# Для iOS
+npm run ios
 
-Join our community of developers creating universal apps.
+# Для веб-версии
+npm run web
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## API
+
+Приложение получает данные с сервера по адресу: `https://site.mstimetables.ru/01a00f53d32773b5b396bf3eb6f57ce2`
+
+Данные передаются в формате Nuxt.js и обрабатываются специальным парсером для извлечения информации о расписании.
+
+## Использование
+
+1. При запуске приложения отображается экран выбора учебной группы
+2. Пользователь выбирает нужную группу из выпадающего списка
+3. После нажатия "Посмотреть расписание" происходит переход на экран с детальным расписанием
+4. Расписание отображается по дням недели с информацией о каждом занятии
+
+## Дизайн
+
+Приложение имеет современный и чистый дизайн с использованием Material Design принципов:
+- Четкая визуальная иерархия информации
+- Отличная читаемость текста
+- Удобные элементы управления
+- Адаптивный интерфейс для разных устройств
+
+## Лицензия
+
+Этот проект лицензирован под MIT лицензией.
