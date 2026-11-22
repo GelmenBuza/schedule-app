@@ -1,21 +1,19 @@
 {
   "expo": {
-    "name": "schedule-app",
+    "name": "Расписание",
     "slug": "schedule-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/schedule.png",
     "scheme": "scheduleapp",
     "userInterfaceStyle": "automatic",
-    "ios": {
-      "icon": "./assets/expo.icon"
-    },
     "android": {
+      "versionCode": 1,
+      "package": "ru.college.schedule",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/images/android-icon-foreground.png",
-        "backgroundImage": "./assets/images/android-icon-background.png",
-        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+        "backgroundColor": "#316bff",
+        "foregroundImage": "./assets/images/scheduleIco.png",
+        "monochromeImage": "./assets/images/scheduleMono.png"
       },
       "predictiveBackGestureEnabled": false
     },
@@ -28,8 +26,8 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#208AEF",
-          "image": "./assets/images/splash-icon.png",
+          "backgroundColor": "#316bff",
+          "image": "./assets/images/scheduleIco.png",
           "imageWidth": 76
         }
       ]
