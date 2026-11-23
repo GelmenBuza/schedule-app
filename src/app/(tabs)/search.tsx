@@ -28,7 +28,7 @@ export default function SearchScreen() {
     const [activeDataId, setActiveDataId] = useState<string | null>(null);
 
     useEffect(() => {
-        if (!searchType || data !== null) return;
+        if (!searchType) return;
 
         const controller = new AbortController();
 
@@ -67,7 +67,8 @@ export default function SearchScreen() {
 
     // Если расписание уже открыто — показываем его с кнопкой возврата к поиску
     if (activeDataId) {
-        const activeGroupName = data?.find((g) => String(g.id) === activeDataId)?.name || data?.find((g) => String(g.id) === activeDataId)?.fio;
+        const activeItem = data?.find((item) => String(item.id) === activeDataId);
+        const activeItemName = activeItem?.name || activeItem?.fio;
 
         return (
             <View style={styles.scheduleWrapper}>
@@ -75,7 +76,7 @@ export default function SearchScreen() {
                     <View>
                         <Text
                             style={styles.topBarLabel}>{searchType === 'groups' ? 'Выбранная группа' : searchType === 'cabinets' ? 'Выбранный кабинет' : 'Выбранный преподаватель'}</Text>
-                        <Text style={styles.topBarTitle}>{activeGroupName ?? activeDataId}</Text>
+                        <Text style={styles.topBarTitle}>{activeItemName ?? activeDataId}</Text>
                     </View>
                     <Pressable
                         onPress={() => setActiveDataId(null)}
@@ -124,11 +125,11 @@ export default function SearchScreen() {
             {searchType && (
                 <View style={styles.card}>
                     <Text style={styles.cardTitle}>Выбор {searchType === 'groups' ?
-                        <Text>группы</Text> : searchType === 'cabinets' ? <Text>кабинета</Text> :
-                            <Text>преподавателя</Text>}</Text>
+                        'группы' : searchType === 'cabinets' ? 'кабинета' :
+                            'преподавателя'}</Text>
                     <Text style={styles.subtitle}>Выберите {searchType === 'groups' ?
-                        <Text>группу</Text> : searchType === 'cabinets' ? <Text>кабинет</Text> :
-                            <Text>преподавателя</Text>} из списка</Text>
+                        'группу' : searchType === 'cabinets' ? 'кабинет' :
+                            'преподавателя'} из списка</Text>
 
                     {loading ? (
                         <View style={styles.inlineCenter}>
@@ -160,7 +161,7 @@ export default function SearchScreen() {
                             <View style={styles.pickerWrapper}>
                                 <Picker
                                     selectedValue={selectedData}
-                                    onValueChange={(group) => setSelectedData(group)}
+                                    onValueChange={(data) => setSelectedData(data)}
                                     style={styles.picker}
                                     dropdownIconColor="#3B82F6"
                                 >
@@ -195,7 +196,8 @@ export default function SearchScreen() {
                             </Pressable>
                         </>
                     ) : (
-                        <Text style={styles.errorText}>Список групп пуст</Text>
+                        <Text
+                            style={styles.errorText}>Список {searchType === 'groups' ? 'групп' : searchType === 'cabinets' ? 'кабинетов' : 'преподавателей'} пуст</Text>
                     )}
                 </View>
             )}
