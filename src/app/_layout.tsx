@@ -14,17 +14,7 @@ export default function RootLayout() {
                     contentStyle: {backgroundColor: '#f5f5f7'},
                 }}
             >
-                <Stack.Screen
-                    name="index"
-                    options={{
-                        title: 'Выбор группы',
-                    }}
-                />
-                <Stack.Screen
-                    name="schedule"
-                    options={{
-                        title: 'Расписание',
-                    }}/>
+                <Stack.Screen name="(tabs)" options={{headerShown: false}}/>
             </Stack>
         </SafeAreaProvider>
     );

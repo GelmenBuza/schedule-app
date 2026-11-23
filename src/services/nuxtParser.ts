@@ -13,12 +13,13 @@ const nuxtReducers = {
     EmptyShallowRef: () => null,
 };
 
-export async function fetchNuxtData<T = Record<string, unknown>>(url: string): Promise<T> {
+export async function fetchNuxtData<T = Record<string, unknown>>(url: string, signal?: AbortSignal): Promise<T> {
     const response = await fetch(url, {
         headers: {
             Accept: 'text/html,application/xhtml+xml',
             'User-Agent': 'Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 Chrome/120.0.0.0 Mobile Safari/537.36',
         },
+        signal
     });
 
     if (!response.ok) {
